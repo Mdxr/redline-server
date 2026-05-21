@@ -52,7 +52,7 @@ GROQ_MODELS = [
 ]
 GEMINI_MODEL   = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
 TRACE_LOG_FILE = "agent_trace_log.jsonl~"
-PORT           = 5050
+PORT           = int(os.environ.get("PORT", os.environ.get("SERVER_PORT", "5050")))
 
 # ─── Provider init ────────────────────────────────────────────────────────────
 groq_client   = None
