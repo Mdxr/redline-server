@@ -31,7 +31,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler("agent_server.log~", encoding="utf-8")
+        logging.FileHandler("agent_server.log", encoding="utf-8")
     ]
 )
 logger = logging.getLogger("REDLINE-X")
@@ -40,23 +40,16 @@ logger = logging.getLogger("REDLINE-X")
 GROQ_API_KEY   = os.environ.get("GROQ_API_KEY", "")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
-# Groq model options (fallback order)
-# - llama-3.3-70b-versatile  : 131k ctx, 6000 TPM, great reasoning
-# - llama-3.1-8b-instant     : 131k ctx, 20000 TPM, ultra fast, lower quality
-# - mixtral-8x7b-32768       : 32k ctx, 5000 TPM, good balance
 GROQ_MODELS = [
     os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"),
     "llama-3.1-8b-instant",
-    "mixtral-8x7b-32768",
     "gemma2-9b-it"
 ]
-GEMINI_MODEL   = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
-TRACE_LOG_FILE = "agent_trace_log.jsonl~"
+TRACE_LOG_FILE = "agent_trace_log.jsonl"
 PORT           = int(os.environ.get("PORT", os.environ.get("SERVER_PORT", "5050")))
 
 # ─── Provider init ────────────────────────────────────────────────────────────
-groq_client   = None
-gemini_client = None
+groq_client = None
 
 if GROQ_API_KEY:
     try:
@@ -68,50 +61,60 @@ if GROQ_API_KEY:
 else:
     logger.info("[Provider] GROQ_API_KEY not set — Groq disabled.")
 
-if GEMINI_API_KEY:
-    try:
-        from google import genai
-        from google.genai import types as genai_types
-        gemini_client = genai.Client(api_key=GEMINI_API_KEY)
-        logger.info(f"[Provider] Gemini ready: {GEMINI_MODEL} (secondary fallback)")
-    except ImportError:
-        logger.warning("[Provider] google-genai package not installed — run: pip install google-genai")
-else:
-    logger.info("[Provider] GEMINI_API_KEY not set — Gemini disabled.")
-
-if not groq_client and not gemini_client:
-    logger.warning("[Provider] No LLM providers configured — heuristic fallback only.")
+if not groq_client:
+    logger.warning("[Provider] No LLM provider configured — heuristic fallback only.")
 
 # ─── App state ────────────────────────────────────────────────────────────────
 app                   = Flask(__name__)
 trace_entries: list   = []
-_pending_incidents: list = []
+_pending_incidents: list = []   # queued from /agent/incident or /agent/incident_batch
 
 # ─── Health ───────────────────────────────────────────────────────────────────
 @app.route("/health", methods=["GET"])
 def health():
-    provider = "heuristic_fallback"
-    if groq_client:   provider = f"groq/{GROQ_MODELS[0]}"
-    elif gemini_client: provider = f"gemini/{GEMINI_MODEL}"
+    provider = f"groq/{GROQ_MODELS[0]}" if groq_client else "heuristic_fallback"
     return jsonify({
         "status": "ok",
         "primary_provider": provider,
-        "groq_ready":   groq_client   is not None,
-        "gemini_ready": gemini_client is not None,
+        "groq_ready": groq_client is not None,
         "trace_entries": len(trace_entries),
         "pending_incidents": len(_pending_incidents),
         "timestamp": _now()
     })
 
-# ─── Incident ingestion ───────────────────────────────────────────────────────
+# ─── Incident ingestion — single ─────────────────────────────────────────────
 @app.route("/agent/incident", methods=["POST"])
 def ingest_incident():
     try:
         body = request.get_json(force=True)
         _pending_incidents.append(body)
-        logger.info(f"[Incident] Queued: {body.get('type','unknown')} — {body.get('summary','')}")
+        logger.info(f"[Incident] Queued single: {body.get('type','unknown')} — {body.get('summary','')[:80]}")
         return jsonify({"queued": True, "queue_size": len(_pending_incidents)})
     except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+# ─── Incident ingestion — batch (lap-end push from RaceStewardAgent) ─────────
+@app.route("/agent/incident_batch", methods=["POST"])
+def ingest_incident_batch():
+    """
+    Receives the end-of-lap batch from RaceStewardAgent.PushLapIncidentsToServer().
+    Each incident in the batch may carry a 'telemetryJson' field with 150m of data.
+    We queue them all into _pending_incidents so they are picked up on the next
+    steward /agent/decide poll.
+    """
+    try:
+        body = request.get_json(force=True)
+        incidents = body.get("incidents", [])
+        for inc in incidents:
+            _pending_incidents.append(inc)
+        logger.info(f"[Steward] Batch received: {len(incidents)} incident(s) queued. "
+                    f"Total pending: {len(_pending_incidents)}")
+
+        # Immediately trigger a steward decision with the queued incidents
+        # by returning a 202 Accepted so the game knows it landed
+        return jsonify({"queued": len(incidents), "queue_size": len(_pending_incidents)}), 202
+    except Exception as e:
+        logger.error(f"[Steward] Batch ingest error: {e}")
         return jsonify({"error": str(e)}), 400
 
 # ─── Main decision endpoint ───────────────────────────────────────────────────
@@ -129,52 +132,44 @@ def agent_decide():
     system_prompt = body.get("systemPrompt", "")
     obs_json      = body.get("observationJson", "{}")
 
-    # Flush pending incidents into Steward observation
-    if "steward" in agent_id and _pending_incidents:
+    # Flush queued incidents into the Steward observation so the LLM sees them
+    if "steward" in agent_id.lower() and _pending_incidents:
         obs_data = _safe_parse(obs_json)
-        obs_data["pendingIncidents"] = list(_pending_incidents)
+        # Merge pending incidents into the pendingIncidents array
+        existing = obs_data.get("pendingIncidents", [])
+        if isinstance(existing, list):
+            obs_data["pendingIncidents"] = existing + [json.dumps(i) for i in _pending_incidents]
+        else:
+            obs_data["pendingIncidents"] = [json.dumps(i) for i in _pending_incidents]
         obs_json = json.dumps(obs_data)
         flushed  = len(_pending_incidents)
         _pending_incidents.clear()
-        logger.info(f"[Steward] Flushed {flushed} queued incidents into prompt.")
+        logger.info(f"[Steward] Flushed {flushed} incident(s) into LLM prompt.")
 
-    logger.info(f"[{agent_role}] Request received ({len(obs_json)} chars)")
+    logger.info(f"[{agent_role}] Request received ({len(obs_json)} chars obs)")
     _log_trace({"type": "OBSERVATION", "agent_id": agent_id, "agent_role": agent_role,
                 "timestamp": _now(), "observation": _safe_parse(obs_json)})
 
-    decision   = None
-    raw        = None
-    provider   = None
-    error_msg  = None
+    decision  = None
+    raw       = None
+    provider  = None
+    error_msg = None
 
-    # ── 1. Try Groq (primary) ─────────────────────────────────────────────────
+    # ── 1. Try Groq (primary, with model fallback chain) ─────────────────────
     if groq_client and decision is None:
         for model in GROQ_MODELS:
             try:
                 raw      = _call_groq(system_prompt, obs_json, model)
                 decision = _parse_decision(raw, agent_id)
                 provider = f"groq/{model}"
-                logger.info(f"[{agent_role}] Groq ({model}) -> {decision.get('action')} | {decision.get('displayMessage','')[:80]}")
+                logger.info(f"[{agent_role}] Groq ({model}) -> {decision.get('action')} | "
+                            f"{decision.get('displayMessage','')[:80]}")
                 break
             except Exception as e:
                 error_msg = str(e)
-                logger.warning(f"[{agent_role}] Groq ({model}) failed ({str(e)[:50]}) — trying next...")
-        
-        if decision is None:
-            logger.warning(f"[{agent_role}] All Groq models failed — trying Gemini...")
+                logger.warning(f"[{agent_role}] Groq ({model}) failed: {str(e)[:80]}")
 
-    # ── 2. Try Gemini (secondary fallback) ────────────────────────────────────
-    if gemini_client and decision is None:
-        try:
-            raw      = _call_gemini(system_prompt, obs_json)
-            decision = _parse_decision(raw, agent_id)
-            provider = f"gemini/{GEMINI_MODEL}"
-            logger.info(f"[{agent_role}] Gemini -> {decision.get('action')} | {decision.get('displayMessage','')[:80]}")
-        except Exception as e:
-            error_msg = str(e)
-            logger.warning(f"[{agent_role}] Gemini failed ({e}) — using heuristic fallback.")
-
-    # ── 3. Heuristic fallback (always works) ──────────────────────────────────
+    # ── 2. Heuristic fallback ─────────────────────────────────────────────────
     if decision is None:
         decision = _heuristic_fallback(agent_id, agent_role, obs_json)
         provider = "heuristic"
@@ -189,7 +184,7 @@ def agent_decide():
 
     return jsonify(decision)
 
-# ─── Trace ────────────────────────────────────────────────────────────────────
+# ─── Trace endpoints ──────────────────────────────────────────────────────────
 @app.route("/trace", methods=["GET"])
 def get_trace():
     return jsonify({"total_entries": len(trace_entries), "entries": trace_entries})
@@ -204,7 +199,6 @@ def export_trace():
 
 # ─── Provider calls ───────────────────────────────────────────────────────────
 def _call_groq(system_prompt: str, observation_json: str, model: str) -> str:
-    """Call Groq's OpenAI-compatible API."""
     response = groq_client.chat.completions.create(
         model=model,
         messages=[
@@ -212,28 +206,15 @@ def _call_groq(system_prompt: str, observation_json: str, model: str) -> str:
             {"role": "user",   "content": f"=== RACE STATE ===\n{observation_json}\n\nRespond with ONLY valid JSON. No markdown, no code blocks."}
         ],
         temperature=0.2,
-        max_tokens=300,   # Short output = low token cost
+        max_tokens=350,
     )
     return response.choices[0].message.content
 
 
-def _call_gemini(system_prompt: str, observation_json: str) -> str:
-    """Call Gemini via google-genai SDK."""
-    prompt = f"{system_prompt}\n\n=== RACE STATE ===\n{observation_json}\n\nRespond with ONLY valid JSON."
-    response = gemini_client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt,
-        config=genai_types.GenerateContentConfig(
-            temperature=0.2,
-            max_output_tokens=300,
-        )
-    )
-    return response.text
-
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 def _parse_decision(raw: str, agent_id: str) -> dict | None:
     clean = raw.strip()
-    # Strip markdown code fences
+    # Strip markdown code fences if model ignores instructions
     if "```" in clean:
         parts = clean.split("```")
         for part in parts:
@@ -253,40 +234,48 @@ def _parse_decision(raw: str, agent_id: str) -> dict | None:
         data.setdefault("requiresImmediate", False)
         return data
     except Exception as e:
-        logger.error(f"Both AI providers failed: {e}")
-        # Return silent fallback so the game never stalls but doesn't fake AI messages
-        fallback = {
-            "agentId": agent_id,
-            "action": "no_action",
-            "parameter": "",
-            "targetCar": "Player",
-            "reasoning": f"[ERROR] AI offline: {str(e)[:30]}",
-            "displayMessage": "",
-            "confidence": 0.0,
-            "requiresImmediate": False
-        }
-        _log_trace({"agentId": agent_id, "fallback": True, "error": str(e), "content": fallback})
-        return fallback
+        logger.error(f"[Parser] JSON parse failed: {e} | raw[:100]={raw[:100]}")
+        return None   # caller will try next provider or fall to heuristic
 
 
 def _heuristic_fallback(agent_id: str, agent_role: str, obs_json: str) -> dict:
-    obs = _safe_parse(obs_json)
-    msg = ""
+    obs    = _safe_parse(obs_json)
+    msg    = ""
     action = "no_action"
-    
+
     if agent_role == "Race Engineer":
         if obs.get("lastImpactAlert"):
-            msg = "Copy that. Sensors nominal."
-            
+            msg    = "Checking damage sensors."
+            action = "no_action"
+        elif obs.get("mandatoryPitDue"):
+            msg    = "Box this lap. Mandatory stop."
+            action = "recommend_pit"
+        elif obs.get("tyreAvgWearPct", 0) > 85:
+            msg    = "Tyres critical. Box box box."
+            action = "recommend_pit"
+        elif obs.get("safetyCarPitAdvised"):
+            msg    = "Safety car. Free stop. Box now."
+            action = "safety_car_pit"
+
+    elif "steward" in agent_id.lower():
+        incidents = obs.get("pendingIncidents", [])
+        collisions = obs.get("collisionSummaries", [])
+        if collisions:
+            action = "warning"
+            msg    = "Stewards noted the contact."
+        elif obs.get("trackLimitViolationsPlayer", 0) >= 5:
+            action = "time_penalty"
+            msg    = "Stewards: +5s penalty — Player, track limits."
+
     return {
-        "agentId": agent_id,
-        "action": action,
-        "parameter": "",
-        "targetCar": "Player",
-        "reasoning": "[HEURISTIC] Server fallback",
-        "displayMessage": msg,
-        "confidence": 0.0,
-        "requiresImmediate": False
+        "agentId":          agent_id,
+        "action":           action,
+        "parameter":        "5" if action == "time_penalty" else "",
+        "targetCar":        "Player",
+        "reasoning":        "[HEURISTIC] Server fallback — no LLM available.",
+        "displayMessage":   msg,
+        "confidence":       0.0,
+        "requiresImmediate": action != "no_action"
     }
 
 
@@ -312,8 +301,7 @@ def _now() -> str:
 if __name__ == "__main__":
     logger.info("=" * 60)
     logger.info("  REDLINE-X Agent Bridge Server")
-    logger.info(f"  Groq:   {str(GROQ_MODELS[0]) + ' (+fallbacks)' if groq_client else 'DISABLED'}")
-    logger.info(f"  Gemini: {GEMINI_MODEL if gemini_client else 'DISABLED'}")
+    logger.info(f"  Groq:   {GROQ_MODELS[0] + ' (+fallbacks)' if groq_client else 'DISABLED'}")
     logger.info(f"  Port:   {PORT}")
     logger.info(f"  Trace:  {TRACE_LOG_FILE}")
     logger.info("=" * 60)

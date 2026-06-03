@@ -1596,3 +1596,289 @@
 2026-05-20 01:09:16,012 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2026-05-20 01:09:16,014 [INFO] [Race Steward] Groq -> time_penalty | 10s penalty for Player
 2026-05-20 01:09:16,015 [INFO] 127.0.0.1 - - [20/May/2026 01:09:16] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:38:43,559 [INFO] [Provider] Groq ready: llama-3.3-70b-versatile (primary)
+2026-06-02 22:38:45,114 [INFO] [Provider] Gemini ready (google-generativeai): gemini-2.0-flash
+2026-06-02 22:38:45,120 [INFO] ============================================================
+2026-06-02 22:38:45,121 [INFO]   REDLINE-X Agent Bridge Server
+2026-06-02 22:38:45,121 [INFO]   Groq:   llama-3.3-70b-versatile (+fallbacks)
+2026-06-02 22:38:45,121 [INFO]   Gemini: gemini-2.0-flash
+2026-06-02 22:38:45,121 [INFO]   Port:   5050
+2026-06-02 22:38:45,121 [INFO]   Trace:  agent_trace_log.jsonl
+2026-06-02 22:38:45,122 [INFO] ============================================================
+2026-06-02 22:38:45,134 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.14:5050
+2026-06-02 22:38:45,135 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-02 22:42:17,546 [INFO] [Provider] Groq ready: llama-3.3-70b-versatile (primary)
+2026-06-02 22:42:17,551 [INFO] ============================================================
+2026-06-02 22:42:17,551 [INFO]   REDLINE-X Agent Bridge Server
+2026-06-02 22:42:17,552 [INFO]   Groq:   llama-3.3-70b-versatile (+fallbacks)
+2026-06-02 22:42:17,552 [INFO]   Port:   5050
+2026-06-02 22:42:17,552 [INFO]   Trace:  agent_trace_log.jsonl
+2026-06-02 22:42:17,552 [INFO] ============================================================
+2026-06-02 22:42:17,578 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.14:5050
+2026-06-02 22:42:17,579 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-02 22:46:44,644 [INFO] [Provider] Groq ready: llama-3.3-70b-versatile (primary)
+2026-06-02 22:46:44,650 [INFO] ============================================================
+2026-06-02 22:46:44,651 [INFO]   REDLINE-X Agent Bridge Server
+2026-06-02 22:46:44,651 [INFO]   Groq:   llama-3.3-70b-versatile (+fallbacks)
+2026-06-02 22:46:44,651 [INFO]   Port:   5050
+2026-06-02 22:46:44,651 [INFO]   Trace:  agent_trace_log.jsonl
+2026-06-02 22:46:44,652 [INFO] ============================================================
+2026-06-02 22:46:44,672 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.14:5050
+2026-06-02 22:46:44,672 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-02 22:52:47,528 [INFO] [Race Engineer] Request received (1214 chars obs)
+2026-06-02 22:52:48,106 [INFO] [Race Steward] Request received (533 chars obs)
+2026-06-02 22:52:48,358 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:52:48,383 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-02 22:52:48,386 [INFO] 127.0.0.1 - - [02/Jun/2026 22:52:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:52:48,616 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:52:48,618 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-02 22:52:48,620 [INFO] 127.0.0.1 - - [02/Jun/2026 22:52:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:53:01,993 [INFO] [Race Engineer] Request received (1611 chars obs)
+2026-06-02 22:53:02,367 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:53:02,371 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now
+2026-06-02 22:53:02,372 [INFO] 127.0.0.1 - - [02/Jun/2026 22:53:02] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:53:16,994 [INFO] [Race Engineer] Request received (2167 chars obs)
+2026-06-02 22:53:17,652 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:53:17,653 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | Damage minor, stay out
+2026-06-02 22:53:17,655 [INFO] 127.0.0.1 - - [02/Jun/2026 22:53:17] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:53:18,108 [INFO] [Race Steward] Request received (2950 chars obs)
+2026-06-02 22:53:18,946 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:53:18,949 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> time_penalty | F1 (INNOVISTA) 5s penalty
+2026-06-02 22:53:18,951 [INFO] 127.0.0.1 - - [02/Jun/2026 22:53:18] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:53:32,001 [INFO] [Race Engineer] Request received (2223 chars obs)
+2026-06-02 22:53:32,665 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:53:32,667 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | Damage minor, stay out
+2026-06-02 22:53:32,668 [INFO] 127.0.0.1 - - [02/Jun/2026 22:53:32] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:53:47,504 [INFO] [Race Engineer] Request received (2026 chars obs)
+2026-06-02 22:53:48,081 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:53:48,083 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-02 22:53:48,084 [INFO] 127.0.0.1 - - [02/Jun/2026 22:53:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-02 22:53:48,110 [INFO] [Race Steward] Request received (2268 chars obs)
+2026-06-02 22:53:48,593 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-02 22:53:48,596 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | F1 (INNOVISTA 2) warned
+2026-06-02 22:53:48,597 [INFO] 127.0.0.1 - - [02/Jun/2026 22:53:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:40:53,840 [INFO] [Provider] Groq ready: llama-3.3-70b-versatile (primary)
+2026-06-03 08:40:53,846 [INFO] ============================================================
+2026-06-03 08:40:53,846 [INFO]   REDLINE-X Agent Bridge Server
+2026-06-03 08:40:53,846 [INFO]   Groq:   llama-3.3-70b-versatile (+fallbacks)
+2026-06-03 08:40:53,846 [INFO]   Port:   5050
+2026-06-03 08:40:53,846 [INFO]   Trace:  agent_trace_log.jsonl
+2026-06-03 08:40:53,847 [INFO] ============================================================
+2026-06-03 08:40:53,878 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.11:5050
+2026-06-03 08:40:53,878 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-03 08:42:07,695 [INFO] [Provider] Groq ready: llama-3.3-70b-versatile (primary)
+2026-06-03 08:42:07,700 [INFO] ============================================================
+2026-06-03 08:42:07,701 [INFO]   REDLINE-X Agent Bridge Server
+2026-06-03 08:42:07,701 [INFO]   Groq:   llama-3.3-70b-versatile (+fallbacks)
+2026-06-03 08:42:07,701 [INFO]   Port:   5050
+2026-06-03 08:42:07,702 [INFO]   Trace:  agent_trace_log.jsonl
+2026-06-03 08:42:07,702 [INFO] ============================================================
+2026-06-03 08:42:07,722 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.11:5050
+2026-06-03 08:42:07,722 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-03 08:45:46,071 [INFO] [Race Engineer] Request received (1215 chars obs)
+2026-06-03 08:45:46,718 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:45:46,753 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:45:46,755 [INFO] 127.0.0.1 - - [03/Jun/2026 08:45:46] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:45:46,812 [INFO] [Race Steward] Request received (581 chars obs)
+2026-06-03 08:45:47,238 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:45:47,241 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:45:47,242 [INFO] 127.0.0.1 - - [03/Jun/2026 08:45:47] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:46:00,462 [INFO] [Race Engineer] Request received (1495 chars obs)
+2026-06-03 08:46:01,064 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:46:01,065 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now, mandatory pit
+2026-06-03 08:46:01,066 [INFO] 127.0.0.1 - - [03/Jun/2026 08:46:01] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:46:15,450 [INFO] [Race Engineer] Request received (2335 chars obs)
+2026-06-03 08:46:15,871 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:46:15,872 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Pit now, damage critical
+2026-06-03 08:46:15,874 [INFO] 127.0.0.1 - - [03/Jun/2026 08:46:15] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:46:16,801 [INFO] [Race Steward] Request received (2958 chars obs)
+2026-06-03 08:46:17,960 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:46:17,962 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> time_penalty | Player 5s penalty
+2026-06-03 08:46:17,963 [INFO] 127.0.0.1 - - [03/Jun/2026 08:46:17] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:46:30,463 [INFO] [Race Engineer] Request received (2134 chars obs)
+2026-06-03 08:46:31,134 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:46:31,135 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Pit now, damage critical
+2026-06-03 08:46:31,136 [INFO] 127.0.0.1 - - [03/Jun/2026 08:46:31] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:46:49,288 [INFO] [Race Engineer] Request received (1215 chars obs)
+2026-06-03 08:46:49,372 [INFO] [Race Steward] Request received (533 chars obs)
+2026-06-03 08:46:49,653 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:46:49,654 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:46:49,655 [INFO] 127.0.0.1 - - [03/Jun/2026 08:46:49] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:46:49,929 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:46:49,931 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:46:49,932 [INFO] 127.0.0.1 - - [03/Jun/2026 08:46:49] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:47:19,370 [INFO] [Race Steward] Request received (1665 chars obs)
+2026-06-03 08:47:19,760 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:47:19,761 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | F1 (INNOVISTA 2) warned
+2026-06-03 08:47:19,762 [INFO] 127.0.0.1 - - [03/Jun/2026 08:47:19] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:47:49,267 [INFO] [Race Engineer] Request received (1965 chars obs)
+2026-06-03 08:47:49,371 [INFO] [Race Steward] Request received (2117 chars obs)
+2026-06-03 08:47:49,666 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:47:49,668 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now mandatory
+2026-06-03 08:47:49,669 [INFO] 127.0.0.1 - - [03/Jun/2026 08:47:49] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:47:49,858 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:47:49,860 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> time_penalty | F1 (INNOVISTA) 5s penalty
+2026-06-03 08:47:49,861 [INFO] 127.0.0.1 - - [03/Jun/2026 08:47:49] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:48:19,393 [INFO] [Race Steward] Request received (1602 chars obs)
+2026-06-03 08:48:19,964 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:48:19,965 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> time_penalty | F1 (INNOVISTA) 5s penalty
+2026-06-03 08:48:19,967 [INFO] 127.0.0.1 - - [03/Jun/2026 08:48:19] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:48:26,931 [INFO] [Race Engineer] Request received (2041 chars obs)
+2026-06-03 08:48:27,272 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:48:27,273 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:48:27,274 [INFO] 127.0.0.1 - - [03/Jun/2026 08:48:27] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:50:47,827 [INFO] [Race Steward] Request received (533 chars obs)
+2026-06-03 08:50:48,044 [INFO] [Race Engineer] Request received (1213 chars obs)
+2026-06-03 08:50:48,189 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:50:48,190 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:50:48,192 [INFO] 127.0.0.1 - - [03/Jun/2026 08:50:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:50:48,551 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:50:48,552 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:50:48,554 [INFO] 127.0.0.1 - - [03/Jun/2026 08:50:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:51:06,373 [INFO] [Race Engineer] Request received (1768 chars obs)
+2026-06-03 08:51:06,809 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:51:06,810 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now
+2026-06-03 08:51:06,812 [INFO] 127.0.0.1 - - [03/Jun/2026 08:51:06] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:51:17,804 [INFO] [Race Steward] Request received (2727 chars obs)
+2026-06-03 08:51:18,248 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:51:18,249 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | F1 (INNOVISTA) warned
+2026-06-03 08:51:18,250 [INFO] 127.0.0.1 - - [03/Jun/2026 08:51:18] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:51:21,347 [INFO] [Race Engineer] Request received (2111 chars obs)
+2026-06-03 08:51:21,800 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:51:21,801 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | Damage minor, stay out
+2026-06-03 08:51:21,802 [INFO] 127.0.0.1 - - [03/Jun/2026 08:51:21] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:51:47,805 [INFO] [Race Steward] Request received (2944 chars obs)
+2026-06-03 08:51:48,046 [INFO] [Race Engineer] Request received (2020 chars obs)
+2026-06-03 08:51:48,252 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:51:48,253 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> time_penalty | F1 (INNOVISTA 2) 5s penalty
+2026-06-03 08:51:48,255 [INFO] 127.0.0.1 - - [03/Jun/2026 08:51:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:51:48,499 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:51:48,501 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:51:48,502 [INFO] 127.0.0.1 - - [03/Jun/2026 08:51:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:53:58,735 [INFO] [Race Engineer] Request received (1214 chars obs)
+2026-06-03 08:53:59,273 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:53:59,274 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:53:59,276 [INFO] 127.0.0.1 - - [03/Jun/2026 08:53:59] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:53:59,558 [INFO] [Race Steward] Request received (581 chars obs)
+2026-06-03 08:54:00,039 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:54:00,041 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 08:54:00,042 [INFO] 127.0.0.1 - - [03/Jun/2026 08:54:00] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:54:13,587 [INFO] [Race Engineer] Request received (1531 chars obs)
+2026-06-03 08:54:13,906 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:54:13,907 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now
+2026-06-03 08:54:13,909 [INFO] 127.0.0.1 - - [03/Jun/2026 08:54:13] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 08:54:29,565 [INFO] [Race Steward] Request received (2040 chars obs)
+2026-06-03 08:54:30,006 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 08:54:30,007 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> time_penalty | Player 10s penalty
+2026-06-03 08:54:30,009 [INFO] 127.0.0.1 - - [03/Jun/2026 08:54:30] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:05:40,936 [INFO] [Race Steward] Request received (533 chars obs)
+2026-06-03 09:05:41,155 [INFO] [Race Engineer] Request received (1215 chars obs)
+2026-06-03 09:05:41,289 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:05:41,291 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 09:05:41,293 [INFO] 127.0.0.1 - - [03/Jun/2026 09:05:41] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:05:41,472 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:05:41,473 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 09:05:41,475 [INFO] 127.0.0.1 - - [03/Jun/2026 09:05:41] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:06:10,910 [INFO] [Race Steward] Request received (1629 chars obs)
+2026-06-03 09:06:11,525 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:06:11,526 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | Player forced off track
+2026-06-03 09:06:11,528 [INFO] 127.0.0.1 - - [03/Jun/2026 09:06:11] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:06:40,914 [INFO] [Race Steward] Request received (2124 chars obs)
+2026-06-03 09:06:41,155 [INFO] [Race Engineer] Request received (2127 chars obs)
+2026-06-03 09:06:41,411 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:06:41,412 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | F1 (INNOVISTA 2) warned
+2026-06-03 09:06:41,413 [INFO] 127.0.0.1 - - [03/Jun/2026 09:06:41] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:06:41,791 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:06:41,792 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now
+2026-06-03 09:06:41,794 [INFO] 127.0.0.1 - - [03/Jun/2026 09:06:41] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:12:33,247 [INFO] [Race Steward] Request received (533 chars obs)
+2026-06-03 09:12:33,542 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:12:33,543 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 09:12:33,545 [INFO] 127.0.0.1 - - [03/Jun/2026 09:12:33] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:12:34,760 [INFO] [Race Engineer] Request received (1263 chars obs)
+2026-06-03 09:12:35,097 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:12:35,099 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 09:12:35,100 [INFO] 127.0.0.1 - - [03/Jun/2026 09:12:35] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:13:03,233 [INFO] [Race Steward] Request received (1713 chars obs)
+2026-06-03 09:13:03,808 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:13:03,810 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | F1 (INNOVISTA) warned
+2026-06-03 09:13:03,811 [INFO] 127.0.0.1 - - [03/Jun/2026 09:13:03] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:13:16,697 [INFO] [Race Engineer] Request received (2048 chars obs)
+2026-06-03 09:13:17,291 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:13:17,293 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now
+2026-06-03 09:13:17,294 [INFO] 127.0.0.1 - - [03/Jun/2026 09:13:17] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:13:31,690 [INFO] [Race Engineer] Request received (2161 chars obs)
+2026-06-03 09:13:32,067 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:13:32,068 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | Damage minor, stay out
+2026-06-03 09:13:32,070 [INFO] 127.0.0.1 - - [03/Jun/2026 09:13:32] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:13:33,233 [INFO] [Race Steward] Request received (1736 chars obs)
+2026-06-03 09:13:33,858 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:13:33,860 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | Player warned for track limits
+2026-06-03 09:13:33,861 [INFO] 127.0.0.1 - - [03/Jun/2026 09:13:33] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:13:34,762 [INFO] [Race Engineer] Request received (2181 chars obs)
+2026-06-03 09:13:35,398 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:13:35,399 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | Stay out, 39% damage
+2026-06-03 09:13:35,401 [INFO] 127.0.0.1 - - [03/Jun/2026 09:13:35] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:21:07,362 [INFO] [Race Engineer] Request received (1214 chars obs)
+2026-06-03 09:21:07,756 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:21:07,757 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 09:21:07,759 [INFO] 127.0.0.1 - - [03/Jun/2026 09:21:07] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:21:08,557 [INFO] [Race Steward] Request received (581 chars obs)
+2026-06-03 09:21:09,003 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:21:09,005 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 09:21:09,006 [INFO] 127.0.0.1 - - [03/Jun/2026 09:21:09] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:21:38,564 [INFO] [Race Steward] Request received (1841 chars obs)
+2026-06-03 09:21:38,983 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:21:38,984 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> warning | F1 (INNOVISTA 2) warned
+2026-06-03 09:21:38,985 [INFO] 127.0.0.1 - - [03/Jun/2026 09:21:38] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 09:21:41,641 [INFO] [Race Engineer] Request received (2039 chars obs)
+2026-06-03 09:21:42,193 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 09:21:42,194 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now
+2026-06-03 09:21:42,195 [INFO] 127.0.0.1 - - [03/Jun/2026 09:21:42] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 10:53:13,054 [INFO] [Provider] Groq ready: llama-3.3-70b-versatile (primary)
+2026-06-03 10:53:13,060 [INFO] ============================================================
+2026-06-03 10:53:13,061 [INFO]   REDLINE-X Agent Bridge Server
+2026-06-03 10:53:13,061 [INFO]   Groq:   llama-3.3-70b-versatile (+fallbacks)
+2026-06-03 10:53:13,061 [INFO]   Port:   5050
+2026-06-03 10:53:13,061 [INFO]   Trace:  agent_trace_log.jsonl
+2026-06-03 10:53:13,062 [INFO] ============================================================
+2026-06-03 10:53:13,105 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.11:5050
+2026-06-03 10:53:13,106 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-03 10:54:27,077 [INFO] [Race Steward] Request received (533 chars obs)
+2026-06-03 10:54:27,597 [INFO] [Race Engineer] Request received (1213 chars obs)
+2026-06-03 10:54:27,906 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 10:54:27,929 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 10:54:27,930 [INFO] 127.0.0.1 - - [03/Jun/2026 10:54:27] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 10:54:28,188 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 10:54:28,190 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> no_action | 
+2026-06-03 10:54:28,192 [INFO] 127.0.0.1 - - [03/Jun/2026 10:54:28] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 10:54:42,543 [INFO] [Race Engineer] Request received (1493 chars obs)
+2026-06-03 10:54:43,171 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 10:54:43,172 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Box now, mandatory pit
+2026-06-03 10:54:43,173 [INFO] 127.0.0.1 - - [03/Jun/2026 10:54:43] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 10:54:57,093 [INFO] [Race Steward] Request received (1558 chars obs)
+2026-06-03 10:54:57,535 [INFO] [Race Engineer] Request received (1885 chars obs)
+2026-06-03 10:54:57,619 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 10:54:57,621 [INFO] [Race Steward] Groq (llama-3.3-70b-versatile) -> no_action | No penalty
+2026-06-03 10:54:57,623 [INFO] 127.0.0.1 - - [03/Jun/2026 10:54:57] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-03 10:54:58,221 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-03 10:54:58,222 [INFO] [Race Engineer] Groq (llama-3.3-70b-versatile) -> recommend_pit | Pit now, tyres critical
+2026-06-03 10:54:58,224 [INFO] 127.0.0.1 - - [03/Jun/2026 10:54:58] "POST /agent/decide HTTP/1.1" 200 -
