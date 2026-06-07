@@ -5084,3 +5084,474 @@
 2026-06-08 02:26:55,692 [INFO] 127.0.0.1 - - [08/Jun/2026 02:26:55] "POST /agent/appeal HTTP/1.1" 200 -
 2026-06-08 02:26:57,015 [INFO] [Race Engineer] SambaNova → no_action | Front wing is damaged
 2026-06-08 02:26:57,017 [INFO] 127.0.0.1 - - [08/Jun/2026 02:26:57] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:34:00,220 [INFO] [Provider] Dedicated Steward Groq client ready
+2026-06-08 03:34:00,701 [INFO] [Provider] Dedicated Engineer Groq client ready
+2026-06-08 03:34:00,708 [INFO] ============================================================
+2026-06-08 03:34:00,708 [INFO]   REDLINE-X Agent Bridge Server  v3  (National Finals)
+2026-06-08 03:34:00,709 [INFO]   Groq:       ENABLED (dedicated steward, dedicated engineer)
+2026-06-08 03:34:00,709 [INFO]   SambaNova:  ENABLED
+2026-06-08 03:34:00,709 [INFO]   OpenRouter: ENABLED
+2026-06-08 03:34:00,710 [INFO]   Gemini:     DISABLED
+2026-06-08 03:34:00,710 [INFO]   Port:       5050
+2026-06-08 03:34:00,710 [INFO]   Trace:      agent_trace_log.jsonl
+2026-06-08 03:34:00,711 [INFO]   Endpoints: /agent/decide  /agent/appeal  /agent/debrief
+2026-06-08 03:34:00,711 [INFO] ============================================================
+2026-06-08 03:34:00,733 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.13:5050
+2026-06-08 03:34:00,733 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-08 03:34:41,120 [INFO] [Race Steward] Request (541 chars obs)
+2026-06-08 03:34:41,778 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:34:41,802 [INFO] [Race Steward] Groq/llama-3.3-70b-versatile → no_action | 
+2026-06-08 03:34:41,804 [INFO] 127.0.0.1 - - [08/Jun/2026 03:34:41] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:34:42,073 [INFO] [Race Engineer] Request (1577 chars obs)
+2026-06-08 03:34:42,417 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:34:42,419 [INFO] [Race Engineer] Groq/llama-3.3-70b-versatile → no_action | 
+2026-06-08 03:34:42,421 [INFO] 127.0.0.1 - - [08/Jun/2026 03:34:42] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:34:59,918 [INFO] [Race Engineer] Request (1830 chars obs)
+2026-06-08 03:35:00,029 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:35:00,032 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:35:00,515 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:35:00,518 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:35:00,520 [INFO] 127.0.0.1 - - [08/Jun/2026 03:35:00] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:35:00,543 [INFO] [Appeal] Missing collision blame data (aggressor/victim) for non-track-limit penalty → immediate OVERTURN
+2026-06-08 03:35:00,543 [INFO] [Appeal] Done in 0.4ms via pre-screen: overturned (insufficient collision data)
+2026-06-08 03:35:00,544 [INFO] 127.0.0.1 - - [08/Jun/2026 03:35:00] "POST /agent/appeal HTTP/1.1" 200 -
+2026-06-08 03:35:17,550 [INFO] [Race Steward] Request (902 chars obs)
+2026-06-08 03:35:17,759 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:35:17,760 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:35:18,065 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:35:18,080 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incident occurred.
+2026-06-08 03:35:18,081 [INFO] 127.0.0.1 - - [08/Jun/2026 03:35:18] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:35:47,561 [INFO] [Race Steward] Request (1339 chars obs)
+2026-06-08 03:35:47,664 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:35:47,665 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:35:47,942 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:35:47,943 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incident occurred, no action required.
+2026-06-08 03:35:47,945 [INFO] 127.0.0.1 - - [08/Jun/2026 03:35:47] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:35:48,517 [INFO] [Race Engineer] Request (2271 chars obs)
+2026-06-08 03:35:48,632 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:35:48,632 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:35:49,258 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:35:49,259 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:35:49,261 [INFO] 127.0.0.1 - - [08/Jun/2026 03:35:49] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:36:15,190 [INFO] [Race Engineer] Request (2486 chars obs)
+2026-06-08 03:36:15,294 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:15,295 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:36:15,702 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:36:15,703 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → recommend_pit | Box this lap. Medium tyres ready.
+2026-06-08 03:36:15,705 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:15] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:36:17,573 [INFO] [Race Steward] Request (4039 chars obs)
+2026-06-08 03:36:17,687 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:17,687 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:36:18,415 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:36:18,416 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → time_penalty | Player: 10s penalty for collision.
+2026-06-08 03:36:18,418 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:18] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:36:27,957 [INFO] [Race Engineer] Request (2613 chars obs)
+2026-06-08 03:36:28,055 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:28,056 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:36:28,128 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:28,129 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:36:29,984 [INFO] [Race Engineer] SambaNova → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:36:29,986 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:29] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:36:30,010 [INFO] [Appeal] High-impulse collision (8297 N·s >= 5000) — player not victim → immediate UPHOLD
+2026-06-08 03:36:30,010 [INFO] [Appeal] Done in 1.1ms via pre-screen: upheld (high impulse)
+2026-06-08 03:36:30,011 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:30] "POST /agent/appeal HTTP/1.1" 200 -
+2026-06-08 03:36:30,176 [INFO] [Race Engineer] Request (2634 chars obs)
+2026-06-08 03:36:30,251 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:30,252 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:36:30,324 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:30,325 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:36:32,078 [INFO] [Race Engineer] SambaNova → recommend_pit | Front wing is heavily damaged, pit now
+2026-06-08 03:36:32,080 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:32] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:36:47,589 [INFO] [Race Steward] Request (1760 chars obs)
+2026-06-08 03:36:47,678 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:47,679 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:36:48,107 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:36:48,108 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incidents to review.
+2026-06-08 03:36:48,110 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:48] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:36:48,528 [INFO] [Race Engineer] Request (2478 chars obs)
+2026-06-08 03:36:48,622 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:48,623 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:36:48,688 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:48,689 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:36:50,270 [INFO] [Race Engineer] SambaNova → recommend_pit | Front wing is heavily damaged, pit now
+2026-06-08 03:36:50,272 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:50] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:36:53,942 [INFO] [Race Engineer] Request (2514 chars obs)
+2026-06-08 03:36:54,037 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:54,038 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:36:54,110 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:36:54,111 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:36:55,842 [INFO] [Race Engineer] SambaNova → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:36:55,844 [INFO] 127.0.0.1 - - [08/Jun/2026 03:36:55] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:37:23,379 [INFO] [Race Engineer] Request (1514 chars obs)
+2026-06-08 03:37:23,472 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:37:23,473 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:37:23,777 [INFO] [Race Steward] Request (541 chars obs)
+2026-06-08 03:37:23,871 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:37:23,872 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:37:24,044 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:37:24,046 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:37:24,048 [INFO] 127.0.0.1 - - [08/Jun/2026 03:37:24] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:37:24,405 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:37:24,407 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:37:24,409 [INFO] 127.0.0.1 - - [08/Jun/2026 03:37:24] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:37:27,945 [INFO] [Race Engineer] Request (1596 chars obs)
+2026-06-08 03:37:28,016 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:37:28,017 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:37:28,085 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:37:28,086 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:37:29,975 [INFO] [Race Engineer] SambaNova → recommend_pit | Box this lap for wets
+2026-06-08 03:37:29,976 [INFO] 127.0.0.1 - - [08/Jun/2026 03:37:29] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:37:51,362 [INFO] [Race Engineer] Request (2086 chars obs)
+2026-06-08 03:37:51,472 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:37:51,474 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:37:51,782 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:37:51,783 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:37:51,785 [INFO] 127.0.0.1 - - [08/Jun/2026 03:37:51] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:38:02,197 [INFO] [Race Steward] Request (1536 chars obs)
+2026-06-08 03:38:02,291 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:38:02,292 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:38:02,718 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:38:02,735 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → time_penalty | F1 INNOVISTA: 10s time penalty.
+2026-06-08 03:38:02,736 [INFO] 127.0.0.1 - - [08/Jun/2026 03:38:02] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:38:31,767 [INFO] [Race Engineer] Request (2395 chars obs)
+2026-06-08 03:38:31,854 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:38:31,855 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:38:32,166 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:38:32,168 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:38:32,169 [INFO] 127.0.0.1 - - [08/Jun/2026 03:38:32] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:38:32,217 [INFO] [Race Steward] Request (1391 chars obs)
+2026-06-08 03:38:32,318 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:38:32,318 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:38:32,857 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:38:32,858 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incidents to review.
+2026-06-08 03:38:32,860 [INFO] 127.0.0.1 - - [08/Jun/2026 03:38:32] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:39:04,796 [INFO] [Race Engineer] Request (1518 chars obs)
+2026-06-08 03:39:04,886 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:39:04,887 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:39:05,164 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:39:05,165 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:39:05,167 [INFO] 127.0.0.1 - - [08/Jun/2026 03:39:05] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:39:05,981 [INFO] [Race Steward] Request (573 chars obs)
+2026-06-08 03:39:06,080 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:39:06,081 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:39:06,759 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:39:06,761 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:39:06,763 [INFO] 127.0.0.1 - - [08/Jun/2026 03:39:06] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:39:28,866 [INFO] [Race Engineer] Request (1802 chars obs)
+2026-06-08 03:39:28,974 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:39:28,975 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:39:29,620 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:39:29,621 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:39:29,622 [INFO] 127.0.0.1 - - [08/Jun/2026 03:39:29] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:39:29,652 [INFO] [Appeal] Missing collision blame data (aggressor/victim) for non-track-limit penalty → immediate OVERTURN
+2026-06-08 03:39:29,652 [INFO] [Appeal] Done in 0.6ms via pre-screen: overturned (insufficient collision data)
+2026-06-08 03:39:29,653 [INFO] 127.0.0.1 - - [08/Jun/2026 03:39:29] "POST /agent/appeal HTTP/1.1" 200 -
+2026-06-08 03:39:35,989 [INFO] [Race Steward] Request (868 chars obs)
+2026-06-08 03:39:36,112 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:39:36,113 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:39:37,058 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:39:37,060 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incidents for Player.
+2026-06-08 03:39:37,061 [INFO] 127.0.0.1 - - [08/Jun/2026 03:39:37] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:40:29,132 [INFO] [Race Engineer] Request (2239 chars obs)
+2026-06-08 03:40:29,254 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:40:29,254 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:40:29,847 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:40:29,848 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | Track limit penalty risk, be cautious.
+2026-06-08 03:40:29,850 [INFO] 127.0.0.1 - - [08/Jun/2026 03:40:29] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:40:30,356 [INFO] [Race Steward] Request (3075 chars obs)
+2026-06-08 03:40:30,454 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:40:30,454 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:40:31,040 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:40:31,042 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → time_penalty | F1 TELENOR: 5s penalty for track limit violations
+2026-06-08 03:40:31,043 [INFO] 127.0.0.1 - - [08/Jun/2026 03:40:31] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:41:00,363 [INFO] [Race Steward] Request (1739 chars obs)
+2026-06-08 03:41:00,453 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:00,454 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:41:01,591 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:41:01,592 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incidents for Player.
+2026-06-08 03:41:01,593 [INFO] 127.0.0.1 - - [08/Jun/2026 03:41:01] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:41:27,275 [INFO] [Race Engineer] Request (2558 chars obs)
+2026-06-08 03:41:27,381 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:27,382 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:41:27,864 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:41:27,865 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:41:27,867 [INFO] 127.0.0.1 - - [08/Jun/2026 03:41:27] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:41:29,137 [INFO] [Race Engineer] Request (2495 chars obs)
+2026-06-08 03:41:29,211 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:29,212 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:41:29,277 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:29,278 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:41:30,380 [INFO] [Race Steward] Request (1952 chars obs)
+2026-06-08 03:41:30,471 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:30,472 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:41:31,039 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:41:31,042 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → time_penalty | Player: 10s time penalty for collision with F1 INNOVISTA.
+2026-06-08 03:41:31,044 [INFO] 127.0.0.1 - - [08/Jun/2026 03:41:31] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:41:31,270 [INFO] [Race Engineer] SambaNova → recommend_pit | Box now, mandatory pit stop
+2026-06-08 03:41:31,271 [INFO] 127.0.0.1 - - [08/Jun/2026 03:41:31] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:41:41,499 [INFO] [Race Engineer] Request (2558 chars obs)
+2026-06-08 03:41:41,593 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:41,594 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:41:41,664 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:41,665 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:41:42,255 [INFO] [Race Engineer] Request (2575 chars obs)
+2026-06-08 03:41:42,326 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:42,327 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:41:42,398 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:41:42,398 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:41:44,586 [INFO] [Race Engineer] SambaNova → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:41:44,588 [INFO] 127.0.0.1 - - [08/Jun/2026 03:41:44] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:41:44,622 [INFO] [Appeal] Missing collision blame data (aggressor/victim) for non-track-limit penalty → immediate OVERTURN
+2026-06-08 03:41:44,623 [INFO] [Appeal] Done in 0.6ms via pre-screen: overturned (insufficient collision data)
+2026-06-08 03:41:44,624 [INFO] 127.0.0.1 - - [08/Jun/2026 03:41:44] "POST /agent/appeal HTTP/1.1" 200 -
+2026-06-08 03:41:44,638 [INFO] [Race Engineer] SambaNova → recommend_pit | Front wing is heavily damaged, pit now
+2026-06-08 03:41:44,640 [INFO] 127.0.0.1 - - [08/Jun/2026 03:41:44] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:42:00,383 [INFO] [Race Steward] Request (1591 chars obs)
+2026-06-08 03:42:00,494 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:42:00,495 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:42:01,267 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:42:01,270 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No further action required.
+2026-06-08 03:42:01,272 [INFO] 127.0.0.1 - - [08/Jun/2026 03:42:01] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:42:14,617 [INFO] [Race Engineer] Request (2602 chars obs)
+2026-06-08 03:42:14,727 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:42:14,728 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:42:15,464 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:42:15,466 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:42:15,467 [INFO] 127.0.0.1 - - [08/Jun/2026 03:42:15] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:43:09,065 [INFO] [Race Steward] Request (541 chars obs)
+2026-06-08 03:43:09,165 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:43:09,166 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:43:09,359 [INFO] [Race Engineer] Request (1518 chars obs)
+2026-06-08 03:43:09,451 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:43:09,453 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:43:09,454 [INFO] 127.0.0.1 - - [08/Jun/2026 03:43:09] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:43:09,462 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:43:09,463 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:43:09,879 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:43:09,881 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:43:09,882 [INFO] 127.0.0.1 - - [08/Jun/2026 03:43:09] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:43:46,179 [INFO] [Race Steward] Request (2197 chars obs)
+2026-06-08 03:43:46,271 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:43:46,273 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:43:46,694 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:43:46,695 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → give_position | F1 TELENOR forced off track
+2026-06-08 03:43:46,696 [INFO] 127.0.0.1 - - [08/Jun/2026 03:43:46] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:44:14,462 [INFO] [Race Engineer] Request (2659 chars obs)
+2026-06-08 03:44:14,555 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:44:14,556 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:44:15,038 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:44:15,040 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:44:15,041 [INFO] 127.0.0.1 - - [08/Jun/2026 03:44:15] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:44:16,172 [INFO] [Race Steward] Request (1965 chars obs)
+2026-06-08 03:44:16,265 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:44:16,266 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:44:16,478 [INFO] [Race Engineer] Request (2633 chars obs)
+2026-06-08 03:44:16,554 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:44:16,555 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:44:16,624 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:44:16,625 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:44:16,630 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:44:16,631 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → give_position | F1 TELENOR must give position.
+2026-06-08 03:44:16,633 [INFO] 127.0.0.1 - - [08/Jun/2026 03:44:16] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:44:18,470 [INFO] [Race Engineer] SambaNova → recommend_pit | Box now, mandatory pit stop
+2026-06-08 03:44:18,471 [INFO] 127.0.0.1 - - [08/Jun/2026 03:44:18] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:44:46,178 [INFO] [Race Steward] Request (1876 chars obs)
+2026-06-08 03:44:46,287 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:44:46,288 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:44:46,855 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:44:46,856 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → give_position | F1 TELENOR must give position.
+2026-06-08 03:44:46,858 [INFO] 127.0.0.1 - - [08/Jun/2026 03:44:46] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:45:15,061 [INFO] [Race Engineer] Request (2413 chars obs)
+2026-06-08 03:45:15,171 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:15,172 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:45:15,582 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:45:15,584 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:45:15,586 [INFO] 127.0.0.1 - - [08/Jun/2026 03:45:15] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:45:21,635 [INFO] [Race Steward] Request (2848 chars obs)
+2026-06-08 03:45:21,721 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:21,722 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:45:21,937 [INFO] [Race Engineer] Request (2568 chars obs)
+2026-06-08 03:45:22,052 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:22,053 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:45:22,121 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:22,122 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:45:22,271 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:45:22,272 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → time_penalty | Player: 10s penalty for reckless driving
+2026-06-08 03:45:22,274 [INFO] 127.0.0.1 - - [08/Jun/2026 03:45:22] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:45:29,942 [INFO] [Race Engineer] SambaNova → recommend_pit | Front wing is heavily damaged pit now
+2026-06-08 03:45:29,944 [INFO] 127.0.0.1 - - [08/Jun/2026 03:45:29] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:45:30,034 [INFO] [Race Engineer] Request (2638 chars obs)
+2026-06-08 03:45:30,134 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:30,135 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:45:30,207 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:30,209 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:45:31,807 [INFO] [Race Engineer] SambaNova → recommend_pit | Front wing is heavily damaged pit now
+2026-06-08 03:45:31,808 [INFO] 127.0.0.1 - - [08/Jun/2026 03:45:31] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:45:32,254 [INFO] [Race Engineer] Request (2640 chars obs)
+2026-06-08 03:45:32,331 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:32,332 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:45:32,399 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:45:32,400 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:45:33,973 [INFO] [Race Engineer] SambaNova → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:45:33,975 [INFO] 127.0.0.1 - - [08/Jun/2026 03:45:33] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:45:33,997 [INFO] [Appeal] Missing collision blame data (aggressor/victim) for non-track-limit penalty → immediate OVERTURN
+2026-06-08 03:45:33,997 [INFO] [Appeal] Done in 0.5ms via pre-screen: overturned (insufficient collision data)
+2026-06-08 03:45:33,998 [INFO] 127.0.0.1 - - [08/Jun/2026 03:45:33] "POST /agent/appeal HTTP/1.1" 200 -
+2026-06-08 03:46:08,137 [INFO] [Race Engineer] Request (1520 chars obs)
+2026-06-08 03:46:08,148 [INFO] [Race Steward] Request (525 chars obs)
+2026-06-08 03:46:08,237 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:46:08,238 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:46:08,242 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:46:08,243 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:46:08,477 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:46:08,479 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:46:08,480 [INFO] 127.0.0.1 - - [08/Jun/2026 03:46:08] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:46:08,582 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:46:08,583 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:46:08,585 [INFO] 127.0.0.1 - - [08/Jun/2026 03:46:08] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:46:50,549 [INFO] [Race Engineer] Request (1867 chars obs)
+2026-06-08 03:46:50,821 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:46:50,822 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:46:51,355 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:46:51,356 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 03:46:51,358 [INFO] 127.0.0.1 - - [08/Jun/2026 03:46:51] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:47:03,691 [INFO] [Race Steward] Request (1533 chars obs)
+2026-06-08 03:47:03,777 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:47:03,778 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:47:04,314 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:47:04,315 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → time_penalty | Player: 10s penalty for collision.
+2026-06-08 03:47:04,317 [INFO] 127.0.0.1 - - [08/Jun/2026 03:47:04] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:47:05,541 [INFO] [Race Engineer] Request (2275 chars obs)
+2026-06-08 03:47:05,656 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:47:05,657 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:47:06,198 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 03:47:06,199 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → damage_pit | Front wing is heavily damaged. Pit for repairs.
+2026-06-08 03:47:06,201 [INFO] 127.0.0.1 - - [08/Jun/2026 03:47:06] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:47:13,265 [INFO] [Race Engineer] Request (2527 chars obs)
+2026-06-08 03:47:13,364 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:47:13,365 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 03:47:13,435 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 03:47:13,435 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 03:47:15,301 [INFO] [Race Engineer] SambaNova → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 03:47:15,303 [INFO] 127.0.0.1 - - [08/Jun/2026 03:47:15] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 03:47:15,330 [INFO] [Appeal] Missing collision blame data (aggressor/victim) for non-track-limit penalty → immediate OVERTURN
+2026-06-08 03:47:15,331 [INFO] [Appeal] Done in 2.5ms via pre-screen: overturned (insufficient collision data)
+2026-06-08 03:47:15,332 [INFO] 127.0.0.1 - - [08/Jun/2026 03:47:15] "POST /agent/appeal HTTP/1.1" 200 -
+2026-06-08 04:03:17,833 [INFO] [Provider] Dedicated Steward Groq client ready
+2026-06-08 04:03:18,529 [INFO] [Provider] Dedicated Engineer Groq client ready
+2026-06-08 04:03:18,561 [INFO] ============================================================
+2026-06-08 04:03:18,561 [INFO]   REDLINE-X Agent Bridge Server  v3  (National Finals)
+2026-06-08 04:03:18,562 [INFO]   Groq:       ENABLED (dedicated steward, dedicated engineer)
+2026-06-08 04:03:18,562 [INFO]   SambaNova:  ENABLED
+2026-06-08 04:03:18,562 [INFO]   OpenRouter: ENABLED
+2026-06-08 04:03:18,562 [INFO]   Gemini:     DISABLED
+2026-06-08 04:03:18,562 [INFO]   Port:       5050
+2026-06-08 04:03:18,563 [INFO]   Trace:      agent_trace_log.jsonl
+2026-06-08 04:03:18,563 [INFO]   Endpoints: /agent/decide  /agent/appeal  /agent/debrief
+2026-06-08 04:03:18,563 [INFO] ============================================================
+2026-06-08 04:03:18,739 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.13:5050
+2026-06-08 04:03:18,777 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-08 04:04:03,544 [INFO] [Race Steward] Request (525 chars obs)
+2026-06-08 04:04:04,081 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:04:04,107 [INFO] [Race Steward] Groq/llama-3.3-70b-versatile → no_action | 
+2026-06-08 04:04:04,110 [INFO] 127.0.0.1 - - [08/Jun/2026 04:04:04] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:04:05,052 [INFO] [Race Engineer] Request (1579 chars obs)
+2026-06-08 04:04:05,185 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:04:05,186 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:04:05,516 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:04:05,517 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 04:04:05,519 [INFO] 127.0.0.1 - - [08/Jun/2026 04:04:05] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:04:28,711 [INFO] [Race Engineer] Request (1819 chars obs)
+2026-06-08 04:04:28,810 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:04:28,811 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:04:29,459 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:04:29,461 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → lodge_appeal | Appeal lodged. We are contesting that decision.
+2026-06-08 04:04:29,462 [INFO] 127.0.0.1 - - [08/Jun/2026 04:04:29] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:04:29,487 [INFO] [Appeal] Reviewing: Time Penalty +5.0s (playerAggressor=False, impulse=0N·s)
+2026-06-08 04:04:29,689 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:04:29,691 [INFO] [Appeal] Groq/llama-3.3-70b-versatile → overturned | aggressor unknown
+2026-06-08 04:04:29,691 [INFO] [Appeal] Done in 204.4ms via groq/llama-3.3-70b-versatile: overturned
+2026-06-08 04:04:29,692 [INFO] 127.0.0.1 - - [08/Jun/2026 04:04:29] "POST /agent/appeal HTTP/1.1" 200 -
+2026-06-08 04:04:36,742 [INFO] [Race Steward] Request (893 chars obs)
+2026-06-08 04:04:36,830 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:04:36,830 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:04:37,114 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:04:37,117 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incident occurred.
+2026-06-08 04:04:37,119 [INFO] 127.0.0.1 - - [08/Jun/2026 04:04:37] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:05:08,782 [INFO] [Race Steward] Request (2476 chars obs)
+2026-06-08 04:05:08,877 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:05:08,878 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:05:09,255 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:05:09,256 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incidents to review.
+2026-06-08 04:05:09,258 [INFO] 127.0.0.1 - - [08/Jun/2026 04:05:09] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:05:10,302 [INFO] [Race Engineer] Request (2252 chars obs)
+2026-06-08 04:05:10,394 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:05:10,395 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:05:10,877 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:05:10,878 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 04:05:10,880 [INFO] 127.0.0.1 - - [08/Jun/2026 04:05:10] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:05:15,592 [INFO] [Race Engineer] Request (2417 chars obs)
+2026-06-08 04:05:15,662 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:05:15,663 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:05:15,736 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:05:15,737 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 04:05:19,746 [INFO] [Race Engineer] SambaNova → recommend_pit | Box now, mandatory pit stop
+2026-06-08 04:05:19,749 [INFO] 127.0.0.1 - - [08/Jun/2026 04:05:19] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:05:38,792 [INFO] [Race Steward] Request (2399 chars obs)
+2026-06-08 04:05:38,878 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:05:38,879 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:05:39,304 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:05:39,305 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → time_penalty | Player: 5s penalty for track limit violations.
+2026-06-08 04:05:39,306 [INFO] 127.0.0.1 - - [08/Jun/2026 04:05:39] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:06:15,261 [INFO] [Race Steward] Request (525 chars obs)
+2026-06-08 04:06:15,384 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:06:15,385 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:06:15,822 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:06:15,824 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 04:06:15,826 [INFO] 127.0.0.1 - - [08/Jun/2026 04:06:15] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:06:16,298 [INFO] [Race Engineer] Request (1557 chars obs)
+2026-06-08 04:06:16,405 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:06:16,406 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:06:16,945 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:06:16,946 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → no_action | 
+2026-06-08 04:06:16,948 [INFO] 127.0.0.1 - - [08/Jun/2026 04:06:16] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:06:52,319 [INFO] [Race Steward] Request (1260 chars obs)
+2026-06-08 04:06:52,419 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:06:52,420 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:06:52,782 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:06:52,784 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → no_action | No incidents to review.
+2026-06-08 04:06:52,786 [INFO] 127.0.0.1 - - [08/Jun/2026 04:06:52] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:06:55,398 [INFO] [Race Engineer] Request (2464 chars obs)
+2026-06-08 04:06:55,515 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:06:55,516 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:06:56,012 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:06:56,015 [INFO] [Race Engineer] Groq/llama-3.1-8b-instant → recommend_pit | Box this lap. Mandatory pit due.
+2026-06-08 04:06:56,016 [INFO] 127.0.0.1 - - [08/Jun/2026 04:06:56] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:07:10,375 [INFO] [Race Engineer] Request (2605 chars obs)
+2026-06-08 04:07:10,488 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:07:10,489 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:07:10,559 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:07:10,560 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 04:07:12,439 [INFO] [Race Engineer] SambaNova → no_action | 
+2026-06-08 04:07:12,441 [INFO] 127.0.0.1 - - [08/Jun/2026 04:07:12] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:07:22,324 [INFO] [Race Steward] Request (2837 chars obs)
+2026-06-08 04:07:22,418 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:07:22,418 [WARNING] [Race Steward] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:07:22,803 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-08 04:07:22,804 [INFO] [Race Steward] Groq/llama-3.1-8b-instant → warning | F1 INNOVISTA: 5 track limit warnings
+2026-06-08 04:07:22,806 [INFO] 127.0.0.1 - - [08/Jun/2026 04:07:22] "POST /agent/decide HTTP/1.1" 200 -
+2026-06-08 04:07:23,405 [INFO] [Race Engineer] Request (2394 chars obs)
+2026-06-08 04:07:23,501 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:07:23,503 [WARNING] [Race Engineer] Groq/llama-3.3-70b-versatile failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3
+2026-06-08 04:07:23,571 [INFO] HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-06-08 04:07:23,572 [WARNING] [Race Engineer] Groq/llama-3.1-8b-instant failed: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.1
+2026-06-08 04:07:24,458 [WARNING] [Race Engineer] SambaNova failed: HTTP Error 429: TOO MANY REQUESTS
+2026-06-08 04:07:24,985 [WARNING] [Race Engineer] OpenRouter failed: HTTP Error 401: Unauthorized
+2026-06-08 04:07:24,986 [INFO] [Race Engineer] Heuristic → no_action
+2026-06-08 04:07:24,987 [INFO] 127.0.0.1 - - [08/Jun/2026 04:07:24] "POST /agent/decide HTTP/1.1" 200 -

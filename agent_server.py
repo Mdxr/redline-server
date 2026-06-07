@@ -383,15 +383,14 @@ CRITICAL RULES (non-negotiable, read every rule carefully):
    - Part hit (Rear Wing, Front Wing, Side, etc.)
    - Impulse magnitude in N·s
    - Collision severity (MAJOR / MINOR / CONTACT)
-3. If Aggressor is "Player" and impulse >= 6000 N·s: the player caused a significant collision. UPHOLD.
-4. If Aggressor is "Unknown" and player was not at fault for the incident type: lean OVERTURN.
-5. If Victim is "Player" and Aggressor is an AI car: player was hit. OVERTURN.
-6. Side impacts ("Side", "Sidepod") at high speed are often mutual — consider context.
+3. If the player is registered as the aggressor (e.g. "Player" is the aggressor): you must UPHOLD the penalty.
+4. If the aggressor is "Unknown", or not registered, or if the player is the victim (another car is the aggressor): you must OVERTURN the penalty.
+5. Side impacts ("Side", "Sidepod") at high speed are often mutual — consider context.
    If player entered a gap that closed, it may be a racing incident — consider OVERTURN harsh penalty.
-7. Player damage (playerDamagePct) does NOT prove innocence; aggressors also get damaged.
-8. If the steward’s own reasoning is contradictory or unclear: benefit of doubt → OVERTURN.
-9. Driver profile "aggressive" lowers benefit of doubt.
-10. Never confuse being penalised for something that happened to you with being the perpetrator.
+6. Player damage (playerDamagePct) does NOT prove innocence; aggressors also get damaged.
+7. If the steward’s own reasoning is contradictory or unclear: benefit of doubt → OVERTURN.
+8. Driver profile "aggressive" lowers benefit of doubt.
+9. Never confuse being penalised for something that happened to you with being the perpetrator.
 
 Return ONLY valid JSON (no markdown):
 {
